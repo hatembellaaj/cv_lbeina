@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | Lobna Kammoun</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --sidebar: linear-gradient(165deg, #1f4f8a 0%, #2f6fb6 55%, #1e8db9 100%);
+      --primary: #1f4f8a;
+      --secondary: #2b7ea1;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --pill: #e8f0ff;
+      --shadow: 0 18px 35px rgba(22, 42, 75, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, #d6e7ff 0, transparent 36%),
+        radial-gradient(circle at 92% 85%, #d0f0ff 0, transparent 28%),
+        var(--bg);
+      color: var(--text);
+      padding: 28px;
+    }
+
+    .cv {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      background: var(--surface);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      background: var(--sidebar);
+      color: #fff;
+      padding: 34px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .identity h1 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+    }
+
+    .identity p {
+      margin: 7px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 500;
+    }
+
+    .block h2 {
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+      letter-spacing: 0.01em;
+    }
+
+    .block ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      display: grid;
+      gap: 9px;
+      font-size: 0.96rem;
+    }
+
+    .contact a {
+      color: #d9ecff;
+    }
+
+    .main {
+      padding: 36px 40px;
+      display: grid;
+      gap: 30px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .photo {
+      width: 140px;
+      height: 165px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #cfd9e9, #9db5d7);
+      display: grid;
+      place-items: center;
+      font-size: 2.15rem;
+      color: var(--primary);
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(31, 79, 138, 0.2);
+    }
+
+    .hero h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      line-height: 1.08;
+      color: #1f2937;
+    }
+
+    .speciality {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-weight: 600;
+      font-size: 0.94rem;
+      background: var(--pill);
+      color: var(--primary);
+    }
+
+    section h3 {
+      margin: 0 0 14px;
+      font-size: 1.9rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    .intro p {
+      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.7;
+      max-width: 72ch;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .item {
+      border-left: 3px solid #c5d7ef;
+      padding-left: 14px;
+    }
+
+    .item strong {
+      display: block;
+      font-size: 1.15rem;
+      color: #1e3657;
+    }
+
+    .item span {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 16px;
+      }
+
+      .cv {
+        grid-template-columns: 1fr;
+      }
+
+      .main {
+        padding: 26px 22px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .photo {
+        width: 120px;
+        height: 144px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="cv">
+    <aside class="sidebar">
+      <header class="identity">
+        <h1>Lobna<br />Kammoun</h1>
+        <p>Hématologue</p>
+      </header>
+
+      <section class="block">
+        <h2>Contact</h2>
+        <div class="contact">
+          <span>📍 Saint Gratien (95210), France</span>
+          <span>📞 +33 6 15 32 87 25</span>
+          <span>✉️ lo.kammoun@gmail.com</span>
+          <span>🎂 02/02/1979</span>
+          <span>👨‍👩‍👧‍👦 Mariée, enfants</span>
+          <span>🌍 Tunisienne</span>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Langues</h2>
+        <ul>
+          <li>Arabe : natif</li>
+          <li>Français : courant</li>
+          <li>Anglais : courant</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2>Centres d'intérêt</h2>
+        <ul>
+          <li>Natation</li>
+          <li>Chant</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <header class="hero">
+        <div class="photo">LK</div>
+        <div>
+          <h2>Lobna Kammoun</h2>
+          <span class="speciality">Hématologie bénigne &amp; maligne • Hémostase</span>
+        </div>
+      </header>
+
+      <section class="intro">
+        <h3>Profil professionnel</h3>
+        <p>
+          Hématologue passionnée avec plus de 15 ans d'expérience, spécialisée en hématologie
+          bénigne, maligne et médecine transfusionnelle. Engagée dans l'amélioration de la qualité des soins,
+          avec une expertise reconnue dans les pathologies du sang, la chimiothérapie et l'hémostase.
+          Excellente communicante, rigoureuse et collaborative.
+        </p>
+      </section>
+
+      <section>
+        <h3>Expérience professionnelle</h3>
+        <div class="timeline">
+          <div class="item">
+            <strong>PA — Centre hospitalier de Gonesse, Paris</strong>
+            <span>Mai 2024 – Présent · Hématologie bénigne et maligne, Hémostase</span>
+          </div>
+          <div class="item">
+            <strong>PA — CHU Henri-Mondor, Unité d'hémopathies lymphoïdes, Paris</strong>
+            <span>Octobre 2024 – Mars 2025 · Mise à disposition</span>
+          </div>
+          <div class="item">
+            <strong>Hématologue — Cabinet privé, Sfax, Tunisie</strong>
+            <span>Depuis juin 2013</span>
+          </div>
+          <div class="item">
+            <strong>Assistante hospitalo-universitaire — Hôpital Hédi Chaker, Sfax</strong>
+            <span>Décembre 2010 – Juin 2013</span>
+          </div>
+          <div class="item">
+            <strong>FFI — CHU Saint-Antoine, Paris</strong>
+            <span>Avril 2010 – Novembre 2010</span>
+          </div>
+          <div class="item">
+            <strong>FFT — CHU Henri-Mondor, Paris</strong>
+            <span>Novembre 2009 – Avril 2010</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Formation &amp; Diplômes</h3>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
