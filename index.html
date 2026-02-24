@@ -1,363 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV | Lobna Kammoun</title>
-  <style>
-    :root {
-      --bg: #eef3f8;
-      --card: #ffffff;
-      --ink: #15324d;
-      --muted: #5d6f83;
-      --line: #d7e2ee;
-      --accent: #0a6f8f;
-      --accent-soft: #e3f3f8;
-      --accent-2: #145ca8;
-      --sidebar: #12314f;
-      --shadow: 0 18px 34px rgba(10, 27, 46, 0.15);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Inter", "Segoe UI", Arial, sans-serif;
-      background:
-        radial-gradient(circle at 15% 0%, #d9ecfb 0, transparent 40%),
-        radial-gradient(circle at 100% 100%, #dff4f1 0, transparent 35%),
-        var(--bg);
-      color: var(--ink);
-      padding: 24px;
-    }
-
-    .cv {
-      max-width: 1140px;
-      margin: 0 auto;
-      background: var(--card);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      min-height: calc(100vh - 48px);
-    }
-
-    .sidebar {
-      background: linear-gradient(180deg, #12314f 0%, #0f4063 55%, #0a6f8f 100%);
-      color: #fff;
-      padding: 30px 24px;
-      display: grid;
-      gap: 24px;
-      align-content: start;
-    }
-
-    .identity h1 {
-      margin: 0;
-      line-height: 1.05;
-      font-size: 2rem;
-      letter-spacing: 0.02em;
-    }
-
-    .identity .role {
-      margin: 10px 0 0;
-      font-size: 1rem;
-      color: #d5e7fa;
-      font-weight: 600;
-    }
-
-    .chip {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.35);
-      font-size: 0.82rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .panel h2 {
-      margin: 0 0 10px;
-      font-size: 1.02rem;
-      color: #f6fbff;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      padding-bottom: 8px;
-    }
-
-    .contact, .panel ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 8px;
-      font-size: 0.93rem;
-      line-height: 1.45;
-      color: #deedfd;
-    }
-
-    .main {
-      padding: 34px 38px;
-      display: grid;
-      gap: 24px;
-      align-content: start;
-    }
-
-    .header {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 20px;
-      align-items: center;
-      border-bottom: 2px solid var(--line);
-      padding-bottom: 18px;
-    }
-
-    .portrait {
-      width: 140px;
-      height: 165px;
-      border-radius: 14px;
-      background: linear-gradient(145deg, #c9dbee, #8faece);
-      color: #0d365f;
-      display: grid;
-      place-items: center;
-      font-size: 2.1rem;
-      font-weight: 700;
-    }
-
-    .header h2 {
-      margin: 0;
-      font-size: clamp(1.95rem, 4vw, 2.8rem);
-      line-height: 1.06;
-    }
-
-    .header p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.5;
-      max-width: 66ch;
-    }
-
-    .badges {
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .badge {
-      background: var(--accent-soft);
-      color: var(--accent);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 600;
-    }
-
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1.25fr 1fr;
-    }
-
-    .section {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px;
-      background: #fcfeff;
-    }
-
-    .section h3 {
-      margin: 0 0 12px;
-      font-size: 1.16rem;
-      color: var(--accent-2);
-    }
-
-    .timeline {
-      display: grid;
-      gap: 12px;
-    }
-
-    .entry {
-      border-left: 3px solid #b8d0e8;
-      padding-left: 12px;
-    }
-
-    .entry strong {
-      display: block;
-      font-size: 0.99rem;
-    }
-
-    .entry span {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .section ul {
-      margin: 0;
-      padding-left: 18px;
-      display: grid;
-      gap: 8px;
-      line-height: 1.52;
-      color: #29435e;
-    }
-
-    .highlights {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-    }
-
-    .tile {
-      background: #f2f7fd;
-      border: 1px solid #d7e3f0;
-      border-radius: 12px;
-      padding: 10px;
-      font-size: 0.88rem;
-    }
-
-    .tile strong {
-      display: block;
-      font-size: 1rem;
-      color: var(--accent-2);
-      margin-bottom: 4px;
-    }
-
-    @media (max-width: 980px) {
-      body { padding: 14px; }
-      .cv { grid-template-columns: 1fr; }
-      .main { padding: 24px 20px; }
-      .header { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-      .highlights { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Médical – Dr Lobna Kammoun</title>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 40px;
+    color: #000;
+    line-height: 1.5;
+    font-size: 14px;
+}
+h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+h2 {
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+}
+.section {
+    margin-bottom: 15px;
+}
+ul {
+    margin-top: 5px;
+}
+.header {
+    margin-bottom: 20px;
+}
+</style>
 </head>
+
 <body>
-  <article class="cv">
-    <aside class="sidebar">
-      <header class="identity">
-        <h1>Lobna<br />Kammoun</h1>
-        <p class="role">Médecin hématologue</p>
-        <span class="chip">Prise en charge clinique & parcours patient</span>
-      </header>
 
-      <section class="panel">
-        <h2>Contact</h2>
-        <ul class="contact">
-          <li>📍 Saint-Gratien (95210), France</li>
-          <li>📞 +33 6 15 32 87 25</li>
-          <li>✉️ lo.kammoun@gmail.com</li>
-          <li>🌍 Nationalité tunisienne</li>
-          <li>🎂 02/02/1979</li>
-        </ul>
-      </section>
+<div class="header">
+    <h1>Dr Lobna KAMMOUN</h1>
+    <p>Médecin spécialiste en Hématologie</p>
+    <p>Saint-Gratien (95210), France</p>
+    <p>Téléphone : +33 6 15 32 87 25</p>
+    <p>Email : lo.kammoun@gmail.com</p>
+</div>
 
-      <section class="panel">
-        <h2>Langues</h2>
-        <ul>
-          <li>Arabe : natif</li>
-          <li>Français : courant</li>
-          <li>Anglais : courant</li>
-        </ul>
-      </section>
+<h2>1. Situation actuelle</h2>
+<div class="section">
+    <strong>Praticien Associé – Service d’Hématologie</strong><br>
+    Centre Hospitalier de Gonesse – France<br>
+    Depuis mai 2024
+    <ul>
+        <li>Prise en charge des hémopathies bénignes et malignes</li>
+        <li>Prescription et suivi des chimiothérapies</li>
+        <li>Gestion des urgences hématologiques</li>
+        <li>Participation aux réunions de concertation pluridisciplinaire (RCP)</li>
+        <li>Suivi des troubles de l’hémostase et pathologies thrombotiques</li>
+    </ul>
+</div>
 
-      <section class="panel">
-        <h2>Points forts</h2>
-        <ul>
-          <li>Hématologie bénigne et maligne</li>
-          <li>Hémostase et transfusion</li>
-          <li>Coordination pluridisciplinaire</li>
-        </ul>
-      </section>
-    </aside>
+<h2>2. Parcours hospitalier</h2>
+<div class="section">
+    <strong>Praticien Associé – Service de Médecine Interne et Maladies Infectieuses</strong><br>
+    Hôpital Robert Ballanger (GHT Grand Paris Nord-Est) – France<br>
+    Depuis le 05/01/2026
+</div>
 
-    <main class="main">
-      <header class="header">
-        <div class="portrait">LK</div>
-        <div>
-          <h2>CV médical spécialisé en hématologie</h2>
-          <p>
-            Hématologue expérimentée avec plus de 15 ans de pratique hospitalière et libérale.
-            Expertise en diagnostic, stratégie thérapeutique et suivi des patients atteints de
-            pathologies hématologiques complexes, avec une approche centrée qualité/sécurité.
-          </p>
-          <div class="badges">
-            <span class="badge">Hémopathies lymphoïdes</span>
-            <span class="badge">Chimiothérapie</span>
-            <span class="badge">Médecine transfusionnelle</span>
-            <span class="badge">Hémostase clinique</span>
-          </div>
-        </div>
-      </header>
+<div class="section">
+    <strong>Octobre 2024 – Mars 2025</strong><br>
+    Praticien Associé (mise à disposition)<br>
+    CHU Henri-Mondor – Unité d’hémopathies lymphoïdes – Créteil, France
+</div>
 
-      <section class="highlights">
-        <div class="tile"><strong>15+ ans</strong>Expérience en hématologie clinique</div>
-        <div class="tile"><strong>2 pays</strong>Exercice en France et en Tunisie</div>
-        <div class="tile"><strong>2023</strong>Validation EVC + DU REAMID</div>
-      </section>
+<div class="section">
+    <strong>Juin 2013 – Mai 2024</strong><br>
+    Hématologue – Exercice libéral<br>
+    Cabinet privé – Sfax, Tunisie
+</div>
 
-      <section class="grid">
-        <div class="section">
-          <h3>Expérience professionnelle</h3>
-          <div class="timeline">
-            <div class="entry">
-              <strong>PA — Centre hospitalier de Gonesse, Paris</strong>
-              <span>Mai 2024 – Présent | Hématologie bénigne/maligne, hémostase</span>
-            </div>
-            <div class="entry">
-              <strong>PA — CHU Henri-Mondor, unité d'hémopathies lymphoïdes</strong>
-              <span>Octobre 2024 – Mars 2025 | Mise à disposition</span>
-            </div>
-            <div class="entry">
-              <strong>Hématologue — Cabinet privé, Sfax (Tunisie)</strong>
-              <span>Juin 2013 – Présent</span>
-            </div>
-            <div class="entry">
-              <strong>Assistante HU — Hôpital Hédi Chaker, Sfax</strong>
-              <span>Décembre 2010 – Juin 2013</span>
-            </div>
-            <div class="entry">
-              <strong>FFI — CHU Saint-Antoine & CHU Henri-Mondor (Paris)</strong>
-              <span>Novembre 2009 – Novembre 2010</span>
-            </div>
-          </div>
-        </div>
+<div class="section">
+    <strong>Décembre 2010 – Juin 2013</strong><br>
+    Assistante Hospitalo-Universitaire<br>
+    Hôpital Hédi Chaker – Sfax, Tunisie
+</div>
 
-        <div class="section">
-          <h3>Formation & diplômes</h3>
-          <ul>
-            <li>DU REAMID — Université Paris Cité (2023)</li>
-            <li>EVC — CNG Paris (2023)</li>
-            <li>Examen de spécialité en hématologie — FMT (2009)</li>
-            <li>Doctorat en médecine — FMT (2006)</li>
-            <li>Résidanat en hématologie — CHU Tunisie (2006–2009)</li>
-            <li>Internat en médecine — CHU Tunisie (2002–2004)</li>
-          </ul>
-        </div>
-      </section>
+<div class="section">
+    <strong>Novembre 2009 – Novembre 2010</strong><br>
+    Faisant Fonction d’Interne (FFI)<br>
+    CHU Saint-Antoine et CHU Henri-Mondor – Paris, France
+</div>
 
-      <section class="grid">
-        <div class="section">
-          <h3>Compétences cliniques</h3>
-          <ul>
-            <li>Diagnostic des hémopathies, interprétation d'examens spécialisés</li>
-            <li>Prescription et surveillance des chimiothérapies</li>
-            <li>Gestion des troubles de l'hémostase et des urgences hématologiques</li>
-            <li>Organisation de parcours de soins coordonnés ville-hôpital</li>
-          </ul>
-        </div>
+<h2>3. Diplômes et qualifications</h2>
+<div class="section">
+    <ul>
+        <li>Diplôme Universitaire REAMID – Université Paris Cité – 2023</li>
+        <li>Épreuves de Vérification des Connaissances (EVC) – 2023</li>
+        <li>Diplôme de Spécialité en Hématologie – Faculté de Médecine de Tunis – 2009</li>
+        <li>Doctorat en Médecine – Faculté de Médecine de Tunis – 2006</li>
+        <li>Résidanat en Hématologie – CHU Tunisie (2006–2009)</li>
+        <li>Internat en Médecine – CHU Tunisie (2002–2004)</li>
+    </ul>
+</div>
 
-        <div class="section">
-          <h3>Qualités professionnelles</h3>
-          <ul>
-            <li>Rigueur scientifique et culture de la qualité des soins</li>
-            <li>Écoute active et communication claire avec les patients/familles</li>
-            <li>Travail en équipe pluridisciplinaire et leadership médical</li>
-          </ul>
-        </div>
-      </section>
-    </main>
-  </article>
+<h2>4. Compétences cliniques</h2>
+<div class="section">
+    <ul>
+        <li>Diagnostic et prise en charge des hémopathies malignes et bénignes</li>
+        <li>Réalisation et interprétation de myélogrammes et biopsies ostéo-médullaires</li>
+        <li>Prescription et surveillance des chimiothérapies</li>
+        <li>Prise en charge des troubles de l’hémostase</li>
+        <li>Médecine transfusionnelle</li>
+        <li>Organisation du parcours de soins coordonné ville-hôpital</li>
+    </ul>
+</div>
+
+<h2>5. Activité complémentaire</h2>
+<div class="section">
+    <ul>
+        <li>Participation régulière aux RCP d’hématologie</li>
+        <li>Encadrement et formation d’internes et externes</li>
+        <li>Travail en équipe pluridisciplinaire</li>
+    </ul>
+</div>
+
 </body>
 </html>
